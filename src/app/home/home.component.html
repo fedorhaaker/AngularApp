@@ -1,0 +1,45 @@
+<br>
+<p>huidige kleur: </p><input [disabled]="!editState" placeholder="Kleur" [(ngModel)] = "currentColorBox.name">
+<br><br>
+
+
+<div class="editContainer">
+    <button *ngIf="newState" (click)="onAddColor($event)">Add Color</button>
+    <button *ngIf="editState"  (click)="onChangeColor($event)">Update Color</button>
+</div>
+
+<br><br>
+
+<div class="slidersContainer" *ngIf="editState || newState"  >
+    <div class="sliderContainer" [style.backgroundColor]="currentRgbaColor">
+        <input type="range" min="0" max="255" [(ngModel)]="currentColorBox.r"  (input)="onChangeSlider()" ><output>{{sliderValueR}}</output><br>
+        <input type="range" min="0" max="255" [(ngModel)]="currentColorBox.g"  (input)="onChangeSlider()" ><output>{{sliderValueG}}</output><br>
+        <input type="range" min="0" max="255" [(ngModel)]="currentColorBox.b"  (input)="onChangeSlider()" ><output>{{sliderValueB}}</output><br>
+        <input type="range" min="0" max="1" step="0.01" [(ngModel)]="currentColorBox.a"  (input)="onChangeSlider()" ><output>{{sliderValueA}}</output>
+    </div>
+    <div class="sliderContainer" [style.backgroundColor]="currentRgbaColor">
+        <mat-slider min="0" max="255" [(ngModel)]="currentColorBox.r"  (input)="onChangeSlider()"> </mat-slider><output>{{sliderValueR}}</output><br>
+        <mat-slider min="0" max="255" [(ngModel)]="currentColorBox.g"  (input)="onChangeSlider()"> </mat-slider><output>{{sliderValueG}}</output><br>
+        <mat-slider min="0" max="255" [(ngModel)]="currentColorBox.b"  (input)="onChangeSlider()"> </mat-slider><output>{{sliderValueB}}</output><br>
+        <mat-slider max="1" step="0.01" [(ngModel)]="currentColorBox.a"  (input)="onChangeSlider()"> </mat-slider><output>{{sliderValueA}}</output><br>
+    </div>
+</div>
+
+
+<!--
+<br>
+<div>
+    <button *ngFor="let color of colorArray" (click)="onClicColorButton(color)" [style.backgroundColor]=color.rgbaColor>{{color.name}} </button>
+</div>
+-->
+ <!-- @input decorator   -->
+<div class="colorContainer">
+    <app-color-box  *ngFor="let color of colorArray" [color]="color" (update)="onUpdateColorbox($event)" (delete)="onDeleteColorbox($Event)"></app-color-box>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+.sliderContainer {
+    width:200px;
+    padding:10px;
+    height:200px;
+    float:left;
+    border: 1px solid grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.colorBox{
+    height:300px;
+}
+
+.colorContainer{
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.editContainer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button{
+
+    padding: 15 px;
+    margin:10px;
+    font-size: 11px;
+    font-family: sans-serif;
+    width: 50px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+
